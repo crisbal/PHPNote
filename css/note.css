@@ -4,14 +4,15 @@
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 3em;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	padding-left: 5px;
-	padding-right: 5px;
+	
 	text-align: justify;
+	border-radius: 6px;
 }
 
 .noteTitle{
+	border-top-left-radius: 3px;
+	border-top-right-radius: 3px;
+	font-size: 1.3em;
 	background-color: #555145;
 	padding-left: 5px;
 	padding-right: 5px;
@@ -26,4 +27,6 @@
 	padding-bottom: 10px;
 	border-left: 1px solid #555145;
 	border-right: 1px solid #555145;
+	border-bottom-left-radius: 6px;
+	border-bottom-right-radius: 6px;
 }
