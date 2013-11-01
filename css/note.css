@@ -1,0 +1,29 @@
+.note{
+	background-color: #36332A;
+	max-width: 66%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 3em;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	padding-left: 5px;
+	padding-right: 5px;
+	text-align: justify;
+}
+
+.noteTitle{
+	background-color: #555145;
+	padding-left: 5px;
+	padding-right: 5px;
+	border-bottom: 1px solid #555145;
+	font-weight: bold;
+}
+
+.noteText{
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	border-left: 1px solid #555145;
+	border-right: 1px solid #555145;
+}
