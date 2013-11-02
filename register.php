@@ -24,7 +24,7 @@
       if(isset($_GET["error"]))
       {
         require_once 'functions.php';
-        echo "<div class='error'>" . validateData($_GET["error"]) . "</div>";
+        echo "<br><div class='alert alert-danger'>" . validateData($_GET["error"]) . "</div>";
       } 
       ?>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button>

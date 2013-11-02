@@ -1,6 +1,5 @@
 .note{
 	background-color: #36332A;
-	max-width: 66%;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 3em;
@@ -25,8 +24,12 @@
 	padding-right: 5px;
 	padding-top: 10px;
 	padding-bottom: 10px;
-	border-left: 1px solid #555145;
-	border-right: 1px solid #555145;
+	border-left: 2px solid #555145;
+	border-right: 2px solid #555145;
 	border-bottom-left-radius: 6px;
 	border-bottom-right-radius: 6px;
+}
+
+.noteButtons{
+	float:right;
 }
