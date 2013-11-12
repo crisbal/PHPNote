@@ -9,6 +9,7 @@
   <title>PHPNote - I will remember that for you</title>
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/note.css" rel="stylesheet">
+
 </head>
 
 <body>

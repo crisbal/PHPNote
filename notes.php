@@ -15,10 +15,12 @@
 		{
 			if($result->num_rows == 0)
 			{
-				echo "Add notes to show them here.";
+				echo '<div class="alert alert-info"><strong>Hey, Listen!</strong> Add a note to show it in this page.</div>';
 			}
 			else
 			{
+
+				echo "<h2>Your notes</h2><br>";
 				while ($row = $result->fetch_assoc()) 
 				{
 
@@ -37,11 +39,12 @@
 		}
 		else
 		{
-			echo " error";
+			echo '<div class="alert alert-danger"><strong>Woops!</strong> I can\'t load your notes, please try again in a few seconds.</div>';
 			//header( 'Location: ../login.html' );
 		}
 
 		include_once 'body/footer.php';
+		echo '<script src="js/notes.js"></script>';
 	}
 	else
 	{
