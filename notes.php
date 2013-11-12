@@ -1,25 +1,36 @@
 <?php 
 	session_start();
+	$_SESSION["logged"] = true;
+	$_SESSION["userId"] = 1;
 	if(isset($_SESSION["logged"]))
 	{
+
 		$userId = $_SESSION["userId"];
 		require_once 'config.php';
 		require_once 'functions.php';
-
+		include_once 'body/header.php';
 		$connection = mysqli_connect($dbLocation,$dbUsername,$dbPassword,$dbName) or die("Error " . mysqli_error($connection));
 		$queryGetNotes = "SELECT * FROM $dbNotesTable WHERE USER = $userId";
 		if($result = $connection->query($queryGetNotes))  //if the query was succesfull
 		{
-			if(count($result)==0)
+			if($result->num_rows == 0)
 			{
 				echo "Add notes to show them here.";
 			}
 			else
 			{
-				while ($row = $result->fetch_array(MYSQLI_ASSOC)) 
+				while ($row = $result->fetch_assoc()) 
 				{
-				  echo $row['TITLE'] .'<br />';
-				  echo $row['NOTE'] .'<br /><br /><br /><br /><br />';
+
+					echo 	'<div class="note">
+						      <div class="noteTitle">' . $row['TITLE'] . '
+						        <span class="noteButtons">
+						          <span class="glyphicon glyphicon-pencil" title="Edit this note"></span>
+						          <span class="glyphicon glyphicon-trash" title="Delete this note"></span>
+						        </span>
+						      </div>
+						      <div class="noteText">' . $row['NOTE'] . '  </div>
+    						</div>';
 				}
 
 			}
@@ -29,10 +40,13 @@
 			echo " error";
 			//header( 'Location: ../login.html' );
 		}
+
+		include_once 'body/footer.php';
 	}
 	else
 	{
 		echo "pls login";
 		//header( 'Location: ../login.html' );
-	}	
+	}
+
  ?>
