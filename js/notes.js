@@ -11,7 +11,7 @@ $(".glyphicon-pencil").click(
 
 $(".glyphicon-trash").click(
 	function(){
-		var note = $(this).parent().parent().parent();
+		var note = $(this).parent().parent().parent().parent();
 		var noteTitle = $(note).children('.noteTitle').text().trim();
 		var noteText = $(note).children('.noteText').text().trim();
 		var noteDateTime = $(note).children('.noteDateTime').text().trim();
@@ -35,7 +35,7 @@ $(".glyphicon-trash").click(
 					window.location.assign("login.php");
 					break;
 				default:
-					alert("If you see this alert please alert the administrator.");
+					alert($.trim(data));
 					break;
 			}	
 		})

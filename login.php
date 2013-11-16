@@ -26,7 +26,7 @@
       }
       ?>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
-      <br><br><a class="registerNow" href="register.html">Don't have an account? Register Now!</a>
+      <br><br><a class="registerNow" href="register.php">Don't have an account? Register Now!</a>
     </form>
 
   </div> 

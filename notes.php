@@ -7,26 +7,29 @@
 		require_once 'config.php';
 		require_once 'functions.php';
 		include_once 'body/header.php';
+
 		$connection = mysqli_connect($dbLocation,$dbUsername,$dbPassword,$dbName) or die("Error " . mysqli_error($connection));
 		$queryGetNotes = "SELECT * FROM $dbNotesTable WHERE USER = $userId ORDER BY DATETIME DESC";
+		
 		if($result = $connection->query($queryGetNotes))  //if the query was succesfull
 		{
+
 			if($result->num_rows == 0)
 			{
+				echo '<a href="create.php" ><div class="glyphicon glyphicon-plus addNote" title="Add a note"> </div></a>';
 				echo '<div class="alert alert-info"><strong>Hey, Listen!</strong> Right now this page is empty, add a note to show it here.</div>';
 			}
 			else
 			{
-
-				echo "<h2>Your notes</h2><br>";
+				echo '<a href="create.php" ><div class="glyphicon glyphicon-plus addNote" title="Add a note"> </div></a>';
 				while ($row = $result->fetch_assoc()) 
 				{
 
 					echo 	'<div class="note">
 						      <div class="noteTitle">' . trim($row['TITLE']) . '
 						        <span class="noteButtons">
-						          <span class="glyphicon glyphicon-pencil" title="Edit this note"></span>
-						          <span class="glyphicon glyphicon-trash" title="Delete this note"></span>
+						          <a href="#" ><span class="glyphicon glyphicon-pencil" title="Edit this note"></span></a>
+						          <a href="#" ><span class="glyphicon glyphicon-trash" title="Delete this note"></span></a>
 						        </span>
 						      </div>
 						      <div class="noteText">' . trim($row['NOTE']) . '</div>
