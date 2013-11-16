@@ -33,3 +33,7 @@
 .noteButtons{
 	float:right;
 }
+
+.noteDateTime{
+	display: none;
+}

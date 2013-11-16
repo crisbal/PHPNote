@@ -17,9 +17,9 @@
     <h1>PHPNote - I will remember <b>that</b> for you</h1><br><br><br>
     <form class="form-signin" method="post" action="php/register.php">
       <h3 class="form-signin-heading">Please fill the following fields to register...</h3>
-      <input type="text" name="name" class="form-control" placeholder="Your Username" required autofocus>
-      <input type="email" name="email" class="form-control" placeholder="Your Email" required>
-      <input type="password" name="password" class="form-control" placeholder="Your Password" required>
+      <input type="text" name="name" id="name" class="form-control" placeholder="Your Username" required autofocus>
+      <input type="email" name="email" id="email"  class="form-control" placeholder="Your Email" required>
+      <input type="password" name="password" id="password" class="form-control" placeholder="Your Password" required>
       <?php
       if(isset($_GET["error"]))
       {

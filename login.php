@@ -14,14 +14,17 @@
 <body>
   <div class="container">
     <h1>PHPNote - I will remember <b>that</b> for you</h1><br><br><br>
-    <form class="form-signin">
+    <form class="form-signin" method="post" action="php/login.php">
       <h3 class="form-signin-heading">Please fill the following fields to login...</h3>
-      <input type="email" class="form-control" placeholder="Your Email" required autofocus>
-      <input type="password" class="form-control" placeholder="Your Password" required>
-      <label class="checkbox">
-        <input type="checkbox" value="remember-me"> Remember me
-      </label>
-
+      <input type="email" class="form-control" id="email" name="email" placeholder="Your Email" required autofocus>
+      <input type="password" class="form-control" id="password" name="password" placeholder="Your Password" required>
+      <?php
+      if(isset($_GET["error"]))
+      {
+        require_once 'functions.php';
+        echo "<br><div class='alert alert-danger'>" . validateData($_GET["error"]) . "</div>";
+      }
+      ?>
       <button class="btn btn-lg btn-primary btn-block" type="submit">Login</button>
       <br><br><a class="registerNow" href="register.html">Don't have an account? Register Now!</a>
     </form>
