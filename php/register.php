@@ -26,6 +26,7 @@
 						$_SESSION["logged"] = true;
 						$_SESSION["userId"] = $connection->insert_id;
 						$connection->close();
+						header( 'Location: ../notes.php' );
 					}
 					else
 					{
