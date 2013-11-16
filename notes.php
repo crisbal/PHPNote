@@ -13,7 +13,7 @@
 		{
 			if($result->num_rows == 0)
 			{
-				echo '<div class="alert alert-info"><strong>Hey, Listen!</strong> This page is now empty, add a note to show it here.</div>';
+				echo '<div class="alert alert-info"><strong>Hey, Listen!</strong> Right now this page is empty, add a note to show it here.</div>';
 			}
 			else
 			{
@@ -35,6 +35,8 @@
 				}
 
 			}
+
+			echo '<span class="logout"><a href="php/logout.php">Logout</a></span>';
 		}
 		else
 		{

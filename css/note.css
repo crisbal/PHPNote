@@ -37,3 +37,7 @@
 .noteDateTime{
 	display: none;
 }
+
+.logout{
+	float: right;
+}
