@@ -32,7 +32,7 @@
 						          <a href="#" ><span class="glyphicon glyphicon-trash" title="Delete this note"></span></a>
 						        </span>
 						      </div>
-						      <div class="noteText">' . trim($row['NOTE']) . '</div>
+						      <div class="noteText">' . nl2br(trim($row['NOTE'])) . '</div>
 						      <div class="noteDateTime">' . trim($row['DATETIME']) . '</div>
     						</div>';
 				}

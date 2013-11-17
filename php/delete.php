@@ -12,7 +12,7 @@
 			$dateTime = validateData($_POST["dateTime"]);
 			$userId = validateData($_SESSION["userId"]);
 			$connection = mysqli_connect($dbLocation,$dbUsername,$dbPassword,$dbName) or die("noConnection");
-			$deleteQuery = "DELETE FROM $dbNotesTable WHERE USER=$userId AND TRIM(TITLE) ='" . $title. "' AND TRIM(NOTE) = '" .$text . "' AND TRIM(DATETIME)='" . $dateTime . "'";
+			$deleteQuery = "DELETE FROM $dbNotesTable WHERE USER=$userId AND TRIM(TITLE) ='" . $title. "' AND TRIM(DATETIME)='" . $dateTime . "'";
 			if($result = $connection->query($deleteQuery))
 			{
 				echo "success";

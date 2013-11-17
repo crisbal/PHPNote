@@ -8,7 +8,6 @@ $(".glyphicon-pencil").click(
 	});
 
 
-
 $(".glyphicon-trash").click(
 	function(){
 		var note = $(this).parent().parent().parent().parent();
