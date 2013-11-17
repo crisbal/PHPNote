@@ -1,19 +1,30 @@
 PHPNote
 =======
-This website will host a service that will let you write, save and share text-based notes.
 
-Things you will be able to do:
+What can you do RIGHT NOW with PHPNote?
+------
+* Register and login to your personal account
+* Save text notes to your personal account
+* Delete text notes from your personal account
 
-* Write a simple text note
-* Write your TODO list
-* Share your poem with your friends
-* Save your best jokes
+What will you be able to do with PHPNote?
+------
+* Edit your text notes
+* Share your text notes
+* Add a shared text note to your account
 
 
-Everything for free.
+Why use PHPNote?
+------
+* It is free
+* It is open-source
+* It is made by me
+* Why not?
 
 
-Planned Features: 
-* Mobile-Friendly Version
-* Save pics
-* ??????
+Thanks to:
+* Bootstrap (http://getbootstrap.com/)
+* jQuery (http://jquery.com/)
+* Google (http://google.com/
+
+
