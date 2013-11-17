@@ -1,4 +1,14 @@
-
+<?php 
+  session_start();
+  if(isset($_SESSION["logged"]) && isset($_SESSION["userId"]))
+  {
+    if($_SESSION["logged"]==true)
+    {
+      header( 'Location: ./notes.php');
+      exit();
+    }
+  }
+ ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
