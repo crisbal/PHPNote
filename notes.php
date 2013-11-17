@@ -4,9 +4,9 @@
 	{
 
 		$userId = $_SESSION["userId"];
-		require_once 'config.php';
-		require_once 'functions.php';
-		include_once 'body/header.php';
+		require_once 'php/config.php';
+		require_once 'php/functions.php';
+		require_once 'php/body/header.php';
 
 		$connection = mysqli_connect($dbLocation,$dbUsername,$dbPassword,$dbName) or die("Error " . mysqli_error($connection));
 		$queryGetNotes = "SELECT * FROM $dbNotesTable WHERE USER = $userId ORDER BY DATETIME DESC";
@@ -46,7 +46,7 @@
 			echo '<div class="alert alert-danger"><strong>Woops!</strong> I can\'t load your notes, please try again in a few seconds.</div>';
 		}
 
-		include_once 'body/footer.php';
+		require_once 'php/body/footer.php';
 		echo '<script src="js/notes.js"></script>';
 		$connection->close();
 	}

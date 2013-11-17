@@ -23,7 +23,7 @@
       <?php
       if(isset($_GET["error"]))
       {
-        require_once 'functions.php';
+        require_once 'php/functions.php';
         echo "<br><div class='alert alert-danger'>" . validateData($_GET["error"]) . "</div>";
       } 
       ?>
