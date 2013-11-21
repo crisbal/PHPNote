@@ -28,7 +28,7 @@
 					echo 	'<div class="note">
 						      <div class="noteTitle">' . trim($row['TITLE']) . '
 						        <span class="noteButtons">
-						          <a href="#" ><span class="glyphicon glyphicon-pencil" title="Edit this note"></span></a>
+						          <a href="#" ><span class="glyphicon glyphicon-bullhorn" title="Make this note public"></span></a>
 						          <a href="#" ><span class="glyphicon glyphicon-trash" title="Delete this note"></span></a>
 						        </span>
 						      </div>
@@ -47,7 +47,8 @@
 		}
 
 		require_once 'php/body/footer.php';
-		echo '<script src="js/notes.js"></script>';
+		echo '<script src="js/notes.js?2"></script>';
+		
 		$connection->close();
 	}
 	else

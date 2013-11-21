@@ -1,10 +1,36 @@
-$(".glyphicon-pencil").click(
+$(".glyphicon-bullhorn").click(
 	function(){
-		var note = $(this).parent().parent().parent();
+		var note = $(this).parent().parent().parent().parent();
 		var noteTitle = $(note).children('.noteTitle').text().trim();
-		var noteText = $(note).children('.noteText').text();
-		alert (noteTitle + "\n" + noteText);
-		//alert ($(this).parent().parent().parent().children('.noteTitle').text());
+		var noteText = $(note).children('.noteText').text().trim();
+		var noteDateTime = $(note).children('.noteDateTime').text().trim();
+		var postData = {title:noteTitle,text:noteText,dateTime:noteDateTime};
+
+		var jqxhr = $.post( "public.php",postData, function(data, textStatus, jqXHR) {
+			if($.trim(data).match("^id="))
+			{
+				window.location.assign("public.php?"+$.trim(data));
+			}
+			else
+			{
+				switch($.trim(data))
+				{
+					case "queryError": case "noConnection":
+						alert ("Unexpected Error!\nPlease try again in a few minutes.");
+						location.reload();
+						break;
+					case "redirect":
+						window.location.assign("login.php");
+						break;
+					default:
+						location.reload();
+						break;
+				}	
+			}
+		})
+		.fail(function() {
+			alert( "I can't reach the server.\nPlease try again in a few minutes." );
+		})
 	});
 
 
@@ -27,14 +53,11 @@ $(".glyphicon-trash").click(
 				case "queryError":
 					alert ("Unexpected Error!\nPlease try again in a few minutes.")
 					break;
-				case "noPost":
-					location.reload();
-					break;
 				case "redirect":
 					window.location.assign("login.php");
 					break;
 				default:
-					alert($.trim(data));
+					location.reload();
 					break;
 			}	
 		})

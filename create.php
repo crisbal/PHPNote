@@ -1,3 +1,11 @@
+<?php 
+  session_start();
+  if(!isset($_SESSION["logged"]))
+  {
+    header("Location: login.php?error=Error: Please login to create a note.");
+  }
+ ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
