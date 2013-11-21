@@ -1,6 +1,9 @@
 PHPNote
 =======
 
+Try it here (http://cris9696.altervista.org/PHPNote/) It is not always up-to-date but it gives you an idea about what is going on
+
+
 What can you do RIGHT NOW with PHPNote?
 ------
 * Register and login to your personal account
