@@ -5,8 +5,8 @@ if(isset($_SESSION["logged"]))
 	if(isset($_POST["title"]) && isset($_POST["text"]) && isset($_POST["dateTime"]))
 	{
 		
-		require_once 'php/functions.php';
-		require 'php/config.php';
+		require_once 'functions.php';
+		require 'config.php';
 		$title = validateData($_POST["title"]);
 		$text = validateData($_POST["text"]);
 		$dateTime = validateData($_POST["dateTime"]);
@@ -25,27 +25,27 @@ if(isset($_SESSION["logged"]))
 			}
 			else
 			{
-				header( 'Location: notes.php?error=Error:%20Impossible to download, please try again in a few minutes!');
+				header( 'Location: ../notes.php?error=Error:%20Impossible to download, please try again in a few minutes!');
 				$connection->close();
 				die();
 			}
 		}
 		else
 		{
-			header( 'Location: notes.php?error=Error:%20Impossible to download, please try again in a few minutes!');
+			header( 'Location: ../notes.php?error=Error:%20Impossible to download, please try again in a few minutes!');
 			$connection->close();
 			die();
 		}
 	}
 	else
 	{
-		header( 'Location: notes.php?error=Error:%20Impossible to download, please try again in a few minutes!');
+		header( 'Location: ../notes.php?error=Error:%20Impossible to download, please try again in a few minutes!');
 		$connection->close();
 	}
 }
 else
 {
-	header( 'Location: login.php');
+	header( 'Location: ../login.php');
 }
 
 
@@ -60,7 +60,7 @@ function generatePDF($row)
     	// Page footer
 		public function Footer() {
         // Position at 15 mm from bottom
-			require 'php/config.php';
+			require 'config.php';
 			$this->SetY(-15);
         // Set font
 			$this->SetFont('helvetica', 'I', 10);
