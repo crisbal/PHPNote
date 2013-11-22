@@ -28,6 +28,6 @@ Why use PHPNote?
 Thanks to:
 * Bootstrap (http://getbootstrap.com/)
 * jQuery (http://jquery.com/)
-* Google (http://google.com/
+* Google (http://google.com/)
 
 
