@@ -68,3 +68,14 @@ $(".glyphicon-trash").click(
 
 
 
+$(".glyphicon-floppy-disk").click(
+	function(){
+		var note = $(this).parent().parent().parent().parent();
+		var noteTitle = $(note).children('.noteTitle').text().trim();
+		var noteText = $(note).children('.noteText').text().trim();
+		var noteDateTime = $(note).children('.noteDateTime').text().trim();
+	
+		$('<form action="generate.php" method="post"><input type="hidden" name="title" value="' + noteTitle + '" /><input type="hidden" name="text" value="' + noteText + '" /><input type="hidden" name="dateTime" value="' + noteDateTime + '" /></form>').appendTo('body').submit();
+	});
+
+

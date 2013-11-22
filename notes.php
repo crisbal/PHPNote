@@ -28,8 +28,9 @@
 					echo 	'<div class="note">
 						      <div class="noteTitle">' . trim($row['TITLE']) . '
 						        <span class="noteButtons">
-						          <a href="#" ><span class="glyphicon glyphicon-bullhorn" title="Make this note public"></span></a>
-						          <a href="#" ><span class="glyphicon glyphicon-trash" title="Delete this note"></span></a>
+						        	<a href="#" ><span class="glyphicon glyphicon-floppy-disk" title="Download this note"></span></a>
+						        	<a href="#" ><span class="glyphicon glyphicon-bullhorn" title="Make this note public"></span></a>
+						        	<a href="#" ><span class="glyphicon glyphicon-trash" title="Delete this note"></span></a>
 						        </span>
 						      </div>
 						      <div class="noteText">' . nl2br(trim($row['NOTE'])) . '</div>
@@ -47,7 +48,7 @@
 		}
 
 		require_once 'php/body/footer.php';
-		echo '<script src="js/notes.js?2"></script>';
+		echo '<script src="js/notes.js?3"></script>';
 		
 		$connection->close();
 	}
