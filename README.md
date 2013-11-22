@@ -9,13 +9,14 @@ What can you do RIGHT NOW with PHPNote?
 * Register and login to your personal account
 * Save text notes to your personal account
 * Delete text notes from your personal account
+* Make a note public and share a URL with your friends
+* Generate a PDF from a private note
 
 What will you be able to do with PHPNote?
 ------
 * Edit your text notes
-* Share your text notes
 * Add a shared text note to your account
-
+* ??????
 
 Why use PHPNote?
 ------
@@ -29,5 +30,5 @@ Thanks to:
 * Bootstrap (http://getbootstrap.com/)
 * jQuery (http://jquery.com/)
 * Google (http://google.com/)
-
+* TCPDF (http://www.tcpdf.org/) 
 
