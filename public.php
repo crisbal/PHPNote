@@ -21,11 +21,14 @@ if(isset($_POST["title"]) && isset($_POST["text"]) && isset($_POST["dateTime"]))
 			{
 				
 				$row_cnt = $result->num_rows;
-				if($row_cnt!=0) //if no results the id is good
+				if($row_cnt>0) //if we have 1 result the note is already ok
 				{
 					$row = $result->fetch_assoc();
-					echo "id=" . $row["PUBLICID"];
-					exit();
+					if(strlen($row["PUBLICID"])>1)
+					{
+						echo "id=" . $row["PUBLICID"];
+						exit();
+					}
 				}
 			}
 			else

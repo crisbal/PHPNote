@@ -10,7 +10,7 @@
 
 			$title = validateData($_POST["title"]);
 			$text = validateData($_POST["text"]);
-			$insertQuery = "INSERT INTO $dbNotesTable (USER,TITLE,NOTE) VALUES ('$userId','$title','$text');";
+			$insertQuery = "INSERT INTO $dbNotesTable (USER,TITLE,NOTE,PUBLICID) VALUES ('$userId','$title','$text','');";
 			$connection = mysqli_connect($dbLocation,$dbUsername,$dbPassword,$dbName) or die("Error " . mysqli_error($connection));
 			if($result = $connection->query($insertQuery))
 			{
