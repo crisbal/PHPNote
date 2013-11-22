@@ -76,7 +76,7 @@ function generatePDF($row)
 		// set document information
 	$pdf->SetCreator(PDF_CREATOR);
 	$pdf->SetAuthor('PHPNote');
-	$pdf->SetTitle($row["TITLE"]);
+	$pdf->SetTitle(html_entity_decode($row["TITLE"]));
 	$pdf->SetSubject('Generated Note from PHPNote');
 	$pdf->SetKeywords('PHPNote');
 
@@ -103,7 +103,7 @@ function generatePDF($row)
 	$pdf->AddPage();
 
 		// print a block of text using Write()
-	$pdf->Write(0, $row["TITLE"] . "\n\n", '', 0, 'L', true, 0, false, false, 0);
+	$pdf->Write(0, html_entity_decode($row["TITLE"]) . "\n\n", '', 0, 'L', true, 0, false, false, 0);
 
 		// set font
 	$pdf->SetFont('times', '', 13);
@@ -112,6 +112,6 @@ function generatePDF($row)
 	$pdf->Write(0, html_entity_decode($row["NOTE"]) . "\n\n", '', 0, 'L', true, 0, false, false, 0);
 
 	ob_end_clean();
-	$pdf->Output($row["TITLE"] . '.pdf', 'I');
+	$pdf->Output(html_entity_decode($row["TITLE"]) . '.pdf', 'I');
 }
 ?>
