@@ -16,6 +16,25 @@ if(isset($_POST["title"]) && isset($_POST["text"]) && isset($_POST["dateTime"]))
 			$userId = validateData($_SESSION["userId"]);
 			$connection = mysqli_connect($dbLocation,$dbUsername,$dbPassword,$dbName) or die("noConnection");
 
+			$alreadyPublicQuery = "SELECT PUBLICID FROM $dbNotesTable WHERE USER=$userId AND TRIM(TITLE) ='" . $title. "' AND TRIM(DATETIME)='" . $dateTime . "' LIMIT 1";
+			if($result = $connection->query($alreadyPublicQuery))
+			{
+				
+				$row_cnt = $result->num_rows;
+				if($row_cnt!=0) //if no results the id is good
+				{
+					$row = $result->fetch_assoc();
+					echo "id=" . $row["PUBLICID"];
+					exit();
+				}
+			}
+			else
+			{
+				echo "queryError";
+				$connection->close();
+				die();
+			}
+
 			do{
 				$publicId = generateRandomString(); //generate a random id for the note
 				$selectQuery = "SELECT ID FROM $dbNotesTable WHERE PUBLICID ='" . $publicId . "' LIMIT 1";  //this query get a result if the id is already in use
@@ -31,7 +50,7 @@ if(isset($_POST["title"]) && isset($_POST["text"]) && isset($_POST["dateTime"]))
 				{
 					echo "queryError";
 					$connection->close();
-					die("");
+					die();
 				}
 
 			}while(true);
