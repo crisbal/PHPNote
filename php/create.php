@@ -20,7 +20,6 @@
 			else
 			{
 				header( 'Location: ../create.php?error=Error:%20Can\'t save your note! Please try again.!');
-				echo $insertQuery;
 				$connection->close();
 			}
 		}

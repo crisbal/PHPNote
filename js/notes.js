@@ -121,7 +121,12 @@ function edit(){
 		var note = $(this).parent();
 		var noteTitle = $(note).children('.editNoteTitle').val().trim();
 		var noteText = $(note).children('.editNoteText').val().trim();
-		alert(noteText);
+		if(noteTitle.length == 0 && noteText.length == 0)
+		{
+			alert("Please fill at least one field, or if you want to delete press the delete icon!");
+			return;
+		}
+
 		var noteDateTime = $(note).children('.noteDateTime').text().trim();
 
 		$('<form action="php/edit.php" method="post"><input type="hidden" name="title" value="' + noteTitle + '" /><input type="hidden" name="text" value="' + noteText + '" /><input type="hidden" name="dateTime" value="' + noteDateTime + '" /></form>').appendTo('body').submit();
