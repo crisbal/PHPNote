@@ -112,6 +112,6 @@ function generatePDF($row)
 	$pdf->Write(0, html_entity_decode($row["NOTE"]) . "\n\n", '', 0, 'L', true, 0, false, false, 0);
 
 	ob_end_clean();
-	$pdf->Output(html_entity_decode($row["TITLE"]) . '.pdf', 'I');
+	$pdf->Output(html_entity_decode($row["TITLE"]) . '.pdf', 'D');
 }
 ?>
