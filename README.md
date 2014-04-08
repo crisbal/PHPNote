@@ -11,10 +11,10 @@ What can you do RIGHT NOW with PHPNote?
 * Delete text notes from your personal account
 * Make a note public and share a URL with your friends
 * Generate a PDF from a private note
+* Edit your text notes
 
 What will you be able to do with PHPNote?
 ------
-* Edit your text notes
 * Add a shared text note to your account
 * ??????
 
